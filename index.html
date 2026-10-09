@@ -12,7 +12,7 @@
   <script>
       (function(d, s, id, w, n) {
           w.__ssc = w.__ssc || {};
-          w.__ssc.license = 'g21lq1r'; // 您的 SaleSmartly 專屬許可證代碼
+          w.__ssc.license = 'g21lq1r'; 
           if (w.ssq) return false;
           n = w.ssq = function() {n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
           n.push=n;n.loaded=!0;n.queue=[];
@@ -37,7 +37,7 @@
   <script>
     function openLineChat() {
         // 🚨 請在此處將連結替換為您真正的 LINE 客服加好友連結
-        var lineUrl = "https://line.me/ti/p/MDRrFAVF6f"; 
+        var lineUrl = "https://line.me"; 
         window.open(lineUrl, '_blank');
     }
   </script>
@@ -53,14 +53,11 @@
       --white: #f4f9ff;
       --muted: #a9bdd2;
       --max: 1160px;
-      --line-green: #06C755; /* LINE 官方綠色 */
+      --line-green: #06C755;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -75,7 +72,6 @@
       margin-inline: auto;
     }
 
-    /* 導航欄 */
     .topbar {
       position: sticky;
       top: 0;
@@ -101,7 +97,6 @@
 
     .logo span { color: var(--cyan); }
 
-    /* 按鈕樣式 */
     .btn {
       min-height: 48px;
       display: inline-flex;
@@ -118,18 +113,6 @@
       transition: transform .2s, border-color .2s, box-shadow .2s;
     }
 
-    .btn-primary {
-      color: #03101c;
-      background: linear-gradient(110deg,#55eaff,#9af5ff);
-      box-shadow: 0 0 28px rgba(85,234,255,.16);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 32px rgba(85,234,255,.28);
-    }
-
-    /* LINE 專屬按鈕樣式 */
     .btn-line {
       color: #ffffff;
       background: var(--line-green);
@@ -141,7 +124,6 @@
       box-shadow: 0 0 32px rgba(6, 199, 85, 0.4);
     }
 
-    /* 主視覺區域 */
     .hero {
       position: relative;
       overflow: hidden;
@@ -223,7 +205,21 @@
       flex-wrap: wrap;
     }
 
-    /* 特色與信任列 */
+    .hero-visual {
+      position: relative;
+      min-height: 400px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orbit {
+      position: absolute;
+      width: min(100%,400px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(85,234,255,.2);
+      border-radius: 50%;
+    }
+
     .trustbar {
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
@@ -237,29 +233,11 @@
       gap: 30px;
     }
 
-    .trustitem {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
+    .trustitem { display: flex; gap: 15px; align-items: center; }
+    .trusticon { font-size: 1.8rem; color: var(--cyan); }
+    .trusttext h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .trusttext p { font-size: 0.85rem; color: var(--muted); }
 
-    .trusticon {
-      font-size: 1.8rem;
-      color: var(--cyan);
-    }
-
-    .trusttext h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .trusttext p {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* 頁尾 */
     .footer {
       background: #040c17;
       padding: 40px 0;
@@ -292,7 +270,6 @@
         
         <div class="hero-actions">
           <button class="btn btn-line" onclick="openLineChat()">
-            <!-- LINE 官方圖標 (SVG) -->
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
               <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.084l-.171 1.027c-.052.31-.253 1.212 1.091.661 1.344-.552 7.238-4.262 9.871-7.3 1.838-2.036 3.127-4.178 3.127-6.672zm-15.666 4.25h-2.395c-.375 0-.681-.306-.681-.682V8.95c0-.376.306-.682.681-.682.376 0 .682.306.682.682v3.944h1.713c.376 0 .682.306.682.682 0 .376-.306.682-.682.682zm2.143-.682c0 .376-.306.682-.682.682-.375 0-.681-.306-.681-.682V8.95c0-.376.306-.682.681-.682.376 0 .682.306.682.682v4.922zm5.779 0c0 .285-.176.545-.443.649-.079.03-.162.046-.245.046-.196 0-.385-.084-.518-.24l-2.213-2.61v2.155c0 .376-.306.682-.682.682-.375 0-.681-.306-.681-.682V8.95c0-.282.174-.541.439-.646.264-.105.565-.035.759.176l2.195 2.588V8.95c0-.376.306-.682.682-.682.375 0 .681.306.681.682v4.922zm3.864-3.559h-1.714v.938h1.714c.376 0 .682.306.682.682 0 .376-.306.682-.682.682h-1.714v.956h1.714c.376 0 .682.306.682.682 0 .376-.306.682-.682.682h-2.395c-.376 0-.682-.306-.682-.682V8.95c0-.376.306-.682.682-.682h2.395c.376 0 .682.306.682.682 0 .376-.306.682-.682.682z"/>
             </svg>
@@ -301,10 +278,13 @@
         </div>
       </div>
       
-      <!-- 右側裝飾雷達視覺效果 -->
+      <!-- 右側裝飾影片視覺效果 -->
       <div class="hero-visual">
         <div class="orbit"></div>
-        <div style="font-size: 5rem; z-index: 10; filter: drop-shadow(0 0 20px var(--cyan));">🛡️</div>
+        <video autoplay muted loop playsinline style="width: 100%; max-width: 380px; border-radius: 20px; z-index: 10; box-shadow: 0 0 35px rgba(85,234,255,0.3); object-fit: cover;">
+          <source src="video.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
       </div>
     </div>
   </section>
@@ -334,3 +314,8 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="footer">
+    <div class="wrap">
